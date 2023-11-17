@@ -1,3 +1,3 @@
 # Klinik_cuy
 
-repo ini hanya project latihan menggunakan php native
+repo ini hanya berisikan project latihan menggunakan php native
