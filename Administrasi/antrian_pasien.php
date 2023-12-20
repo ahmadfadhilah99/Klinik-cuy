@@ -8,7 +8,7 @@ $tanggal = date('Y-m-d');
 $pasien = mysqli_query($mysqli, "SELECT * FROM `periksa_pasien` WHERE `tanggal` = '$tanggal'");
 $no = mysqli_num_rows($pasien);
 
-$antrian = mysqli_query($mysqli, "SELECT data_pasien.id_pasien, data_pasien.nama_pasien, periksa_pasien.nik_pasien, periksa_pasien.no_antrian, periksa_pasien.status
+$antrian = mysqli_query($mysqli, "SELECT data_pasien.id_pasien, data_pasien.nama_pasien, periksa_pasien.nik_pasien, periksa_pasien.no_antrian,periksa_pasien.tanggal, periksa_pasien.status
 FROM data_pasien INNER JOIN periksa_pasien
 ON data_pasien.nik_pasien=periksa_pasien.nik_pasien;");
 
@@ -105,7 +105,9 @@ if (isset($_POST['add'])) {
 	</tr>
     <?php 
     while ($a = mysqli_fetch_array($antrian)){
-                ?>
+    if ($a['tanggal']  == $tanggal){
+    
+    ?>
      
      <tr>
          <td><?php echo $a['nik_pasien']; ?></td>
@@ -120,6 +122,7 @@ if (isset($_POST['add'])) {
         </tr>
         
         <?php 
+        }        
         }        
     ?>
     </table>

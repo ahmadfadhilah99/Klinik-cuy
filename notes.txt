@@ -1,0 +1,5 @@
+belum membuat tagihan pasien 
+pertahanan session masih ngebug disaat pindah pages
+
+#notes BE
+bagian admin dan adminstrasi jangan diubah karena dikhawatirkan akan konflik dengan front end

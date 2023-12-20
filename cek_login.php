@@ -17,23 +17,23 @@ if ($cek > 0) {
     $data = mysqli_fetch_assoc($login);
     if ($data['status'] == 'aktif') {
         if ($data['id_role'] == '1') {
-            $_SESSION['username'] = $username;
+            $_SESSION['username'] = $data['nama_akun'];
             $_SESSION['role'] = "admin";
 
             header("location:Admin/admin.php");
         } else if ($data['id_role'] == '2') {
-            $_SESSION['username'] = $username;
+            $_SESSION['username'] = $data['nama_akun'];
             $_SESSION['role'] = "register";
 
             header("location:Administrasi/regist.php");
         } else if ($data['id_role'] == '3') {
-            $_SESSION['username'] = $username;
+            $_SESSION['username'] = $data['nama_akun'];
             $_SESSION['role'] = "dokter";
 
             header("location:Dokter/dokter.php");
 
         } else if ($data['id_role'] == '4') {
-            $_SESSION['username'] = $username;
+            $_SESSION['username'] = $data['nama_akun'];
             $_SESSION['role'] = "apoteker";
 
             header("location:Apotik/apotik.php");
